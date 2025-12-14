@@ -109,16 +109,19 @@
 <script src="config.js"></script>
 <script src="static/index.js"></script>
 <script>
-const audio=document.querySelector('.song-audio-autoplay');
+const audio=document.getElementById('bgMusic');
+audio.volume=0.5;
 
-// When metadata is loaded (duration available)
-audio.addEventListener('loadedmetadata',()=>{
-    audio.currentTime=audio.duration/2; 
-    audio.volume=0.5; 
+// Unlock sound on first user interaction
+const unlock=()=>{
     audio.muted=false;
     audio.play().catch(()=>{});
-});
+    document.removeEventListener('click',unlock);
+    document.removeEventListener('touchstart',unlock);
+};
 
+document.addEventListener('click',unlock);
+document.addEventListener('touchstart',unlock);
 </script>
 </body>
 </html>
