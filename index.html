@@ -114,21 +114,37 @@ const audio=document.querySelector('.song-audio-autoplay');
 
 document.addEventListener("DOMContentLoaded",()=>{
     Swal.fire({
-        title:"💖",
-        text:"Tap Here my love vunnu ",
-        icon:"info",
-        confirmButtonText:"Play 🎵",
+        title:"💖 My Love 💖",
+        html:`
+            <div style="font-size:18px;line-height:1.6">
+                मेरी प्यारी <b>Vunnu</b> 🌸<br>
+              मेरी गलतियों के लिए आपसे तहे दिल से क्षमा चाहता हूँ। <br> 
+आपको एक छोटी-सी खुशी दिखाना चाहता हूँ। 🎶
+            </div>
+        `,
+        icon:"success",
+        confirmButtonText:"🎵 Play Our Song",
+        background:"#fff0f6",
+        color:"#b4005a",
+        confirmButtonColor:"#ff4d88",
         allowOutsideClick:false,
-        allowEscapeKey:false
+        allowEscapeKey:false,
+        showClass:{
+            popup:"animate__animated animate__fadeInUp"
+        },
+        hideClass:{
+            popup:"animate__animated animate__fadeOutDown"
+        }
     }).then((res)=>{
         if(res.isConfirmed){
             audio.currentTime=audio.duration/2||0;
             audio.volume=0.5;
             audio.muted=false;
-            audio.play();
+            audio.play().catch(()=>{});
         }
     });
 });
+
 
 
 </script>
