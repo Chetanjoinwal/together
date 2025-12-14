@@ -1,8 +1,29 @@
-body{
-    background: #fe909b;
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+body , *{
+    font-family: "Kalam", cursive;
 }
+body{
+    min-height:100vh;
+    margin:0;
+    background:linear-gradient(-45deg,
+        #fb8286,
+        #fac4c4,
+        #ddafff,
+        #a18cd1,
+        #ff6f91
+    );
+    background-size:400% 400%;
+    animation:loveGradient 12s ease infinite;
+}
+
+@keyframes loveGradient{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
 .pass-time{
-    color:white;
+    color:rgb(0, 0, 0);
     font-size:12px;
     line-height: 20px;
     margin:0 auto;
@@ -31,7 +52,7 @@ div#content {
 
 #pBg1cNNqT-an-obj-2 {
     position: absolute;
-    -webkit-transform: translate3d(0px, 636px, 0px);
+    -webkit-transform: translate3d(0px, 568px, 0px);
     width: 500px;
     height: 180px;
     top: 0;
@@ -248,7 +269,7 @@ div#content {
 
 #pBg1cNNqT-an-obj-23 {
     position: absolute;
-    -webkit-transform: translate3d(-32px, 32px, 0px) scale3d(0.73, 0.73, 1);
+    -webkit-transform: translate3d(-23px, -141px, 0px) scale3d(0.63, 0.73, 1);
     width: 104px;
     height: 159px;
     top: 0;
@@ -276,10 +297,10 @@ div#content {
 #pBg1cNNqT-an-obj-26 {
     position: absolute;
     -webkit-transform: translate3d(150px, -218px, 0px) scale3d(0.66, 0.66, 1);
-    width: 161px;
+    width: 181px;
     height: 290px;
     top: 0;
-    left: 0;
+    left:-15px;
     -webkit-transform-origin: 47.41% 51.15%;
     -webkit-animation: ani-pBg1cNNqT-an-obj-26-0 1.509s 0s infinite linear alternate both;
 }
@@ -518,4 +539,21 @@ div#content {
         -webkit-animation-timing-function: linear;
         opacity: 0;
     }
+}
+
+#marquee{
+    color: #000!important;
+    backdrop-filter: blur(6px);
+    background: #ffffff7a;
+    max-width: 95%;
+    margin: auto;
+    display: block;
+    border: 2px solid #ffffff;
+    border-radius: 16px;
+}
+
+.pass-time span {
+    font-size: 22px;
+    color: #a00000;
+    font-weight: 600;
 }
