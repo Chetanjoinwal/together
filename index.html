@@ -105,23 +105,32 @@
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script src="config.js"></script>
 <script src="static/index.js"></script>
 <script>
-const audio=document.getElementById('bgMusic');
-audio.volume=0.5;
+const audio=document.querySelector('.song-audio-autoplay');
 
-// Unlock sound on first user interaction
-const unlock=()=>{
-    audio.muted=false;
-    audio.play().catch(()=>{});
-    document.removeEventListener('click',unlock);
-    document.removeEventListener('touchstart',unlock);
-};
+document.addEventListener("DOMContentLoaded",()=>{
+    Swal.fire({
+        title:"💖 Play Music",
+        text:"Tap to start the music",
+        icon:"info",
+        confirmButtonText:"Play 🎵",
+        allowOutsideClick:false,
+        allowEscapeKey:false
+    }).then((res)=>{
+        if(res.isConfirmed){
+            audio.currentTime=audio.duration/2||0;
+            audio.volume=0.5;
+            audio.muted=false;
+            audio.play();
+        }
+    });
+});
 
-document.addEventListener('click',unlock);
-document.addEventListener('touchstart',unlock);
+
 </script>
 </body>
 </html>
