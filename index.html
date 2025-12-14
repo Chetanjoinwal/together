@@ -15,18 +15,7 @@
     <source src="static/music.mp3" type="audio/mp3">
 </audio>
 
-<script>
-const audio=document.querySelector('.song-audio-autoplay');
 
-// When metadata is loaded (duration available)
-audio.addEventListener('loadedmetadata',()=>{
-    audio.currentTime=audio.duration/2; 
-    audio.volume=0.5; 
-    audio.muted=false;
-    audio.play().catch(()=>{});
-});
-
-</script>
 
 <style type="text/css">
     .rotateImages{
@@ -119,5 +108,17 @@ audio.addEventListener('loadedmetadata',()=>{
 
 <script src="config.js"></script>
 <script src="static/index.js"></script>
+<script>
+const audio=document.querySelector('.song-audio-autoplay');
+
+// When metadata is loaded (duration available)
+audio.addEventListener('loadedmetadata',()=>{
+    audio.currentTime=audio.duration/2; 
+    audio.volume=0.5; 
+    audio.muted=false;
+    audio.play().catch(()=>{});
+});
+
+</script>
 </body>
 </html>
